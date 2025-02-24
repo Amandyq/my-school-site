@@ -58,6 +58,13 @@
             <p>Оқушыларға тапсырма беріп, бағалай аласыз.</p>
             <h3>📌 Тапсырмалар</h3>
 <button onclick="addTask()">Тапсырма қосу</button>
+            <div id="teacherSection" style="display: none;">
+    <h2>Тапсырма жүктеу</h2>
+    <input type="text" id="taskTitle" placeholder="Тапсырма атауы">
+    <textarea id="taskDescription" placeholder="Тапсырма сипаттамасы"></textarea>
+    <button onclick="uploadTask()">Тапсырма жүктеу</button>
+</div>
+
 <div id="taskList"></div>
 
         </div>
@@ -75,6 +82,15 @@
     <script src="grades.js"></script>
 <script>
     document.getElementById("userRole").innerText = localStorage.getItem("role") || "Бекітілмеген";
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let userRole = localStorage.getItem("role");
+
+        if (userRole === "teacher") {
+            document.getElementById("teacherSection").style.display = "block";
+        }
+    });
 </script>
 
 
