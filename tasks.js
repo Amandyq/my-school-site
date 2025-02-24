@@ -26,6 +26,20 @@ function addTask() {
     
     alert("Тапсырма қосылды!");
     displayTasks();
+if (localStorage.getItem("role") === "teacher") {
+    taskElement.innerHTML += "<h4>Бағалау:</h4>";
+    task.submissions.forEach(submission => {
+        taskElement.innerHTML += `
+            <p>${submission.user}: <a href="${submission.image}" target="_blank">Суретті қарау</a>
+            <button onclick="gradeTask('${submission.user}', 100)">5</button>
+            <button onclick="gradeTask('${submission.user}', 80)">4</button>
+            <button onclick="gradeTask('${submission.user}', 60)">3</button>
+            <button onclick="gradeTask('${submission.user}', 40)">2</button>
+            <button onclick="gradeTask('${submission.user}', 20)">1</button></p>`;
+    });
+}
+
+    
 }
 
 // Оқушы тапсырма жібереді
