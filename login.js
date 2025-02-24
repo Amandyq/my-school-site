@@ -10,13 +10,20 @@ function registerUser() {
         let userID = generateID(name);
         let password = Math.random().toString(36).slice(-8);
         
+        let role = prompt("Рөліңізді таңдаңыз: student (оқушы), teacher (мұғалім), admin (админ)").toLowerCase();
+        if (role !== "student" && role !== "teacher" && role !== "admin") {
+            alert("Қате! Тек 'student', 'teacher' немесе 'admin' деп жазыңыз.");
+            return;
+        }
+        
         localStorage.setItem("userID", userID);
         localStorage.setItem("password", password);
-        localStorage.setItem("role", "student"); // Әзірге барлық қолданушылар оқушы болады
+        localStorage.setItem("role", role);
         
-        alert(`Сіздің ID: ${userID}\nПароль: ${password}`);
+        alert(`Сіздің ID: ${userID}\nПароль: ${password}\nРөліңіз: ${role}`);
     }
 }
+
 
 function loginUser() {
     let userID = localStorage.getItem("userID");
