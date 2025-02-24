@@ -30,12 +30,35 @@
             margin-top: 10px;
             border-radius: 5px;
         }
+        .panel {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Сәлем, <span id="userName">Қолданушы</span>!</h1>
         <p>Сіздің рөліңіз: <b><span id="userRole">Бекітілмеген</span></b></p>
+
+        <div id="studentPanel" class="panel">
+            <h2>📚 Оқушы панелі</h2>
+            <p>Сізге берілген тапсырмалар осында шығады.</p>
+        </div>
+
+        <div id="teacherPanel" class="panel">
+            <h2>🎓 Мұғалім панелі</h2>
+            <p>Оқушыларға тапсырма беріп, бағалай аласыз.</p>
+        </div>
+
+        <div id="adminPanel" class="panel">
+            <h2>⚙️ Админ панелі</h2>
+            <p>Пайдаланушыларды басқару мүмкіндігі.</p>
+        </div>
+
         <button onclick="logout()">Шығу</button>
     </div>
 
