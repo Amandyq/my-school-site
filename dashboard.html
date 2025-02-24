@@ -47,11 +47,18 @@
         <div id="studentPanel" class="panel">
             <h2>📚 Оқушы панелі</h2>
             <p>Сізге берілген тапсырмалар осында шығады.</p>
+            <h3>📌 Сізге берілген тапсырмалар</h3>
+<div id="taskList"></div>
+
         </div>
 
         <div id="teacherPanel" class="panel">
             <h2>🎓 Мұғалім панелі</h2>
             <p>Оқушыларға тапсырма беріп, бағалай аласыз.</p>
+            <h3>📌 Тапсырмалар</h3>
+<button onclick="addTask()">Тапсырма қосу</button>
+<div id="taskList"></div>
+
         </div>
 
         <div id="adminPanel" class="panel">
@@ -63,5 +70,7 @@
     </div>
 
     <script src="dashboard.js"></script>
+    <script src="tasks.js"></script>
+
 </body>
 </html>
