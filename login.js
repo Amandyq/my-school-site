@@ -18,11 +18,12 @@ function registerUser() {
         
         localStorage.setItem("userID", userID);
         localStorage.setItem("password", password);
-        localStorage.setItem("role", role);
+        localStorage.setItem("role", role); // Рөлді сақтау
         
         alert(`Сіздің ID: ${userID}\nПароль: ${password}\nРөліңіз: ${role}`);
     }
 }
+
 
 
 function loginUser() {
