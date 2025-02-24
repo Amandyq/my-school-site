@@ -66,6 +66,12 @@
 </div>
 
 <div id="taskList"></div>
+<div id="teacherSection" style="display: none;">
+    <h2>Тапсырма жүктеу</h2>
+    <input type="text" id="taskTitle" placeholder="Тапсырма атауы">
+    <textarea id="taskDescription" placeholder="Тапсырма сипаттамасы"></textarea>
+    <button onclick="uploadTask()">Тапсырма жүктеу</button>
+</div>
 
         </div>
 
@@ -89,6 +95,19 @@
 
         if (userRole === "teacher") {
             document.getElementById("teacherSection").style.display = "block";
+        }
+    });
+</script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let userRole = localStorage.getItem("role");
+
+        console.log("Қолданушы рөлі:", userRole); // Тексеру үшін
+        let teacherSection = document.getElementById("teacherSection");
+
+        if (userRole === "teacher" && teacherSection) {
+            teacherSection.style.display = "block";
         }
     });
 </script>
